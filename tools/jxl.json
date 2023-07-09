@@ -1,0 +1,6 @@
+{
+    "filename": "cjxl.exe",
+    "args": "-d 1 \"{input}\" \"{output}\"",
+    "support": ["png", "jpg", "jpeg"],
+    "file_type":"jxl"
+}
