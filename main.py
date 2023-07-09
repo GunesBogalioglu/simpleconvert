@@ -84,7 +84,7 @@ def main():
         "--overwrite",
         action="store_true",
         default=False,
-        help="If there is converted file overwrite it",
+        help="Enable automatic overwriting of existing files during the conversion process if they already exist in the destination location",
     )
 
     args = parser.parse_args()
@@ -104,7 +104,6 @@ def main():
         processed_list = ignite(file_list, num_threads)
         if args.replace:
             for file in processed_list:
-                print(file.location, file.processed)
                 if file.processed and file.location.split(".")[-1] != file.method:
                     if fileutil.check_file_exists(file.location):
                         fileutil.remove_file(file.location)
